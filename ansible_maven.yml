@@ -3,7 +3,6 @@
   connection: local
   become: true
   become_user: root
-  become_pass: intelintel
   tasks:
     - name: 'source code : local install'
       command: mvn  clean package
