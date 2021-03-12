@@ -1,9 +1,24 @@
 - name: Maven Package and Deploy
   hosts: localhost
+   vars:
+    - warName: aws-0.0.1-SNAPSHOT.war
+    - warRemotePath: target
   connection: local
   vars_files:
    - /home/sabareesan/secret
   tasks:
     - name: 'source code : local install'
       command: mvn  clean package
+      command: cp target/aws-0.0.1-SNAPSHOT.war /opt/tomcat/webapps
+      notify:
+        - Restart tomcat
+
+
+  - name: wait for tomcat to start
+    wait_for: port=8081 timeout=60
+    
+  handlers:
+    - name: Restart tomcat
+      service: name=tomcat state=restarted
+
      
