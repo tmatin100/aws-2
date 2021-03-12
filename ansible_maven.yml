@@ -6,4 +6,4 @@
   tasks:
     - name: 'source code : local install'
       command: mvn  clean package
-      become: yes
+      sudo: yes
