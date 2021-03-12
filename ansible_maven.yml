@@ -1,8 +1,5 @@
 - name: Maven Package and Deploy
   hosts: localhost
-   vars:
-    - warName: aws-0.0.1-SNAPSHOT.war
-    - warRemotePath: target
   connection: local
   vars_files:
    - /home/sabareesan/secret
