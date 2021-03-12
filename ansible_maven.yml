@@ -7,3 +7,4 @@
     - name: 'source code : local install'
       command: mvn  clean package
       become: true
+      become_user: root
