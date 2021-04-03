@@ -5,9 +5,8 @@
   # we can also use the 'args' form to provide the options.
 - name: shell script execution to run shell commands
   shell: myScript.sh
-     
-      notify:
-        - Restart tomcat  
+  notify:
+    - Restart tomcat  
      
 - name: wait for tomcat to start
   wait_for: port=8081 timeout=60
