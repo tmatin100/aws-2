@@ -1,8 +1,7 @@
 - name: Maven Package and Deploy
   hosts: localhost
   connection: local
-  vars_files:
-   - /home/sabareesan/secret
+
   tasks:
     - name: 'source code : local install'
       command: mvn  clean package
