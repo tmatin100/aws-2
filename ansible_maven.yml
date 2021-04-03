@@ -3,8 +3,8 @@
   connection: local
   tasks:
   # we can also use the 'args' form to provide the options.
-- name: shell script execution to run shell commands
-  ansible.builtin.shell: myScript.sh
+  - name: shell script execution to run shell commands
+   ansible.builtin.shell: myScript.sh
      
       notify:
         - Restart tomcat  
