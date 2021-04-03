@@ -2,11 +2,10 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: 'source code : local install'
-      command: mvn  clean package
-   - name: 'war file : copy'
-      command: cp target/aws-0.0.1-SNAPSHOT.war /opt/tomcat/webapps
-      
+  # we can also use the 'args' form to provide the options.
+- name: shell script execution to run shell commands
+ansible.builtin.shell: myScript.sh
+     
       notify:
         - Restart tomcat  
      
