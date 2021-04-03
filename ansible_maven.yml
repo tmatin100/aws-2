@@ -4,7 +4,9 @@
   tasks:
     - name: 'source code : local install'
       command: mvn  clean package
+     - name: 'war file : copy'
       command: cp target/aws-0.0.1-SNAPSHOT.war /opt/tomcat/webapps
+      
       notify:
         - Restart tomcat  
      
