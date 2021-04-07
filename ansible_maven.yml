@@ -2,7 +2,6 @@
   hosts: localhost
   connection: local
   tasks:
-  # we can also use the 'args' form to provide the options.
 - name: shell script execution to run shell commands
   shell: myScript.sh
   notify:
