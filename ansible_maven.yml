@@ -3,13 +3,13 @@
   hosts: localhost
   connection: local
   tasks:
-- name: script execution to run  commands
-  shell: "./myScript.sh"
-  notify:
-    - Restart tomcat  
+   - name: script execution to run  commands
+     shell: "./myScript.sh"
+      notify:
+       - Restart tomcat  
      
-- name: wait for tomcat to start
-  wait_for: port=8081 timeout=60
+   - name: wait for tomcat to start
+      wait_for: port=8081 timeout=60
     
   handlers:
     - name: Restart tomcat
