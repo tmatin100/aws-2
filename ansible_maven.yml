@@ -2,8 +2,8 @@
   hosts: localhost
   connection: local
   tasks:
-- name: shell script execution to run shell commands
-  shell: myScript.sh
+- name: script execution to run  commands
+  shell: "./myScript.sh"
   notify:
     - Restart tomcat  
      
