@@ -1,3 +1,4 @@
+---
 - name: Maven Package and Deploy
   hosts: localhost
   connection: local
