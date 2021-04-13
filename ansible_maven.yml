@@ -5,21 +5,21 @@
   tasks:
    - name: script execution to run  commands
      become: yes
-     remote_user: jenkins
+     remote_user: root
      become_method: sudo
      shell: "./myScript.sh"
      
    - name: Copy artifct to tomcat server
      become: yes
-     remote_user: jenkins
+     remote_user: root
      become_method: sudo
-     copy: src=/var/lib/jenkins/workspace/AnsibleProject/files/target/* dest=/opt/tomcat/webapps/
+     copy: src=/var/lib/jenkins/workspace/AnsibleProject/files/target/* dest=/opt/tomcat/webapps/*
      notify: restart tomcat  
      
   handlers:
     - name: Restart tomcat
       become: yes
-      remote_user: jenkins
+      remote_user: root
       become_method: sudo
       service: name=tomcat state=restarted
      
