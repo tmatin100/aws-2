@@ -2,16 +2,17 @@
 - name: Maven Package and Deploy
   hosts: localhost
   connection: local
+  become: True 
   tasks:
    - name: script execution to run  commands
      become: yes
-     remote_user: root
+     remote_user: jenkins
      become_method: sudo
      shell: "./myScript.sh"
      
    - name: Copy artifct to tomcat server
      become: yes
-     remote_user: root
+     remote_user: jenkins
      become_method: sudo
      copy: 
        src: /var/lib/jenkins/workspace/AnsibleProject/files/target/* 
@@ -21,7 +22,7 @@
   handlers:
     - name: Restart tomcat
       become: yes
-      remote_user: root
+      remote_user: jenkins
       become_method: sudo
       service: name=tomcat state=restarted
      
