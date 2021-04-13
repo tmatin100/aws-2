@@ -4,7 +4,7 @@
   connection: local
   tasks:
    - name: Copy artifct to tomcat server
-     copy: src=target/aws-0.0.1-SNAPSHOT.war dest=/opt/tomcat/tomcat/webapps 
+     copy: src=target/aws-0.0.1-SNAPSHOT.war dest=/opt/tomcat/webapps 
      notify:
        - Restart tomcat  
   handlers:
