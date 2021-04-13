@@ -5,7 +5,7 @@
   tasks:
    - name: script execution to run  commands
      shell: "./myScript.sh"
-  tasks:
+     
    - name: Copy artifct to tomcat server
      copy: src=/var/lib/jenkins/workspace/AnsibleProject/files/target/* dest=/opt/tomcat/webapps/
      notify:
