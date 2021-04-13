@@ -4,7 +4,7 @@
   connection: local
   tasks:
    - name: Copy artifct to tomcat server
-     copy: src=/home/ansadmin/artifact/*.war dest=/opt/tomcat/tomcat/webapps 
+     copy: src=webapp/target/webapp.war dest=/opt/tomcat/tomcat/webapps 
      notify:
        - Restart tomcat  
   handlers:
