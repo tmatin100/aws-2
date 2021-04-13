@@ -7,7 +7,7 @@
      become: yes
      remote_user: jenkins
      become_method: sudo
-     shell: chmod 777 "./myScript.sh"
+     shell: "./myScript.sh"
      
    - name: Copy artifct to tomcat server
      become: yes
