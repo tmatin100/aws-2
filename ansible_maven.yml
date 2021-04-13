@@ -13,7 +13,9 @@
      become: yes
      remote_user: root
      become_method: sudo
-     copy: src=/var/lib/jenkins/workspace/AnsibleProject/files/target/* dest=/opt/tomcat/webapps/*
+     copy: 
+       src: /var/lib/jenkins/workspace/AnsibleProject/files/target/* 
+       dest: /opt/tomcat/webapps/*
      notify: restart tomcat  
      
   handlers:
