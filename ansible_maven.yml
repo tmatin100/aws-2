@@ -4,13 +4,15 @@
   connection: local
   tasks:
    - name: script execution to run  commands
+     become: yes
      shell: "./myScript.sh"
-     
    - name: Copy artifct to tomcat server
+     become: yes
      copy: src=/var/lib/jenkins/workspace/AnsibleProject/files/target/* dest=/opt/tomcat/webapps/
      notify:
        - Restart tomcat  
   handlers:
     - name: Restart tomcat
+      become: yes
       service: name=tomcat state=restarted
      
