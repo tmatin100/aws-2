@@ -2,11 +2,9 @@
 - name: Maven Package and Deploy
   hosts: localhost
   connection: local
-  
   tasks:
    - name: script execution to run  commands
      shell: "./myScript.sh"
-     
   tasks:
    - name: Copy artifct to tomcat server
      copy: src=target/aws-0.0.1-SNAPSHOT.war dest=/opt/tomcat/webapps 
